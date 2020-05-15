@@ -97,6 +97,10 @@ namespace Catel.Data
             /// </summary>
             public void RestoreBackup()
             {
+                if (_propertyValuesBackup.Length == 0)
+                {
+                    return;
+                }
                 Dictionary<string, object> oldPropertyValues = null;
 
                 using (var stream = new MemoryStream(_propertyValuesBackup))
